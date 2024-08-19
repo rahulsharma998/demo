@@ -3,9 +3,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Evalution2</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        body{
+            font-family: "Open Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            /* background-color: yellowgreen; */
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px;
+        }
+        .navbar{
+            /* background-color: yellow; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+        }
+        .logo img{
+            width: 30px;
+            height: 30px;
+
+        }
+        .logo span{
+            font-size: 40px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .navtexts{
+            display: flex;
+            color: black;
+            list-style: none;
+        }
+        .navtexts li{
+            margin-left: 20px;
+ 
+        }
+        .navtexts a{
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .navtexts a:hover{
+            color: aqua;
+        }
+        .socialm{
+            display: flex;
+            align-items: center;
+        }
+        .socialm a{
+            margin-right: 12px;
+            text-decoration: none;
+            color: aqua;
+            background-color: rgba(128, 128, 128, 0.332);
+            size: 25px;
+            border-radius: 50%;
+            padding: 5px;
+        }
+        .socialm a:hover{
+            color: aqua;
+        }
+        .button{
+            background-color: aqua;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .button:hover{
+            background-color: black;
+        }
+        .hero{
+            background: url(https://themewagon.github.io/WaterLand/img/carousel-1.jpg);
+            padding: 100px 0;
+            color:white;
+        }
+        .hero .container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .htext h2{
+            color: black;
+        }
+        .htext h1{
+            font-size: 50px;
+            margin: 20px 0;
+            
+        }
+        .htext{
+            width: 50%;
+        }
+        .htext p{
+            margin: 20px 0;
+            font-size: 20px;
+        }
+        .hform{
+            background: rgba(228, 228, 228, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+
+        }
+        .hform h3{
+            margin-bottom: 20px;
+            color:black;
+            justify-content: center;
+            text-align: center;
+        }
+        .hform form input,.hform form select, .hform form button{
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        .tt,.cards{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .tt div .ser-card .card{
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 25%;
+            border: 2px solid black;
+            background-color: white;
+            margin: 10px;
+
+        }
+        .tt .card i{
+            margin: 20px;
+            font-size: 50px;
+            color: aqua;
+        }
+        .services .container{
+            background: url(https://themewagon.github.io/WaterLand/img/carousel-1.jpg);
+            padding: 50px;
+        }
+        .ser-card {
+            display: flex;
+            background-color: white;
+            margin: 20px;
+            border-radius: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+        }
+        footer{
+            display: flex;
+            background-color: rgb(2, 2, 22);
+            color: white;
+            justify-content: center;
+            align-items: center;
+        }
+        footer div{
+            margin: 10px;
+            padding: 10px;
+        }
+
+
+    </style>
 </head>
-<body>
-    demo
+<header>
+    <nav class="navbar" >
+        <div class="logo">
+            <img src="https://themewagon.github.io/WaterLand/index.html" alt="">
+            <span>WaterLand</span>
+        </div>
+        <ul class="navtexts">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Service</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Pages</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <div class="socialm">
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <a href="" class="button">Get Started</a>
+    </nav>
+</header>
 </body>
+    <section class="hero">
+        <div class="container">
+            <div class="htext">
+                <h2>Welcome to Waterland</h2>
+                <h1>The Biggest Theme Park And Amusement Park</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sapiente libero et rerum ratione enim repellendus ducimus possimus quod. Soluta ratione doloribus veritatis unde aperiam culpa quisquam odit facere asperiores?</p>
+                <a href="" class="button">Our Packages</a>
+            </div>
+            <div class="hform">
+                <h3>BOOK YOUR TICKET</h3>
+                <form action="">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Mail">
+                    <input type="number" placeholder="Phone">
+                    <select name="" id="">
+                        <option value="">Select Packages</option>
+                    </select>
+                    <input type="date" placeholder="dd-mm-yyyy">
+                    <input type="text" placeholder="Guest">
+                    <button type="submit" class="button">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="services">
+        <div class="container">
+            <p>Our Service</p>
+            <h2>Explore WaterLand park Service</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis impedit eaque, nemo illo qui suscipit quaerat consequatur nihil dolor magnam sunt, amet eum porro maiores ratione fuga. Voluptatibus, tempore vitae!</p>
+            <div class="tt">
+                <div>
+                    <h3>Monday-Friday</h3>
+                    <p>11:00 AM-16:00 PM</p>
+                </div>
+                <div>
+                    <h3>Saturday-Sunday</h3>
+                    <p>09:00 AM-17:00 PM</p>
+                </div>
+                <div>
+                    <h3>Holiday</h3>
+                    <p>09:00 AM-17:00 PM</p>
+                </div>
+            </div>
+            <div class="ser-card">
+                <div class="card">
+                    <i class="fa-solid fa-house"></i>
+                    <h3>Private Gazebo</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio mollitia voluptatem minima magni aspernatur, accusamus modi excepturi eius, tenetur culpa vero. At maxime laborum earum iste beatae laboriosam minus sed.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Delicious Food</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio mollitia voluptatem minima magni aspernatur, accusamus modi excepturi eius, tenetur culpa vero. At maxime laborum earum iste beatae laboriosam minus sed.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-door-closed"></i>
+                    <h3>Safety Locker</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio mollitia voluptatem minima magni aspernatur, accusamus modi excepturi eius, tenetur culpa vero. At maxime laborum earum iste beatae laboriosam minus sed.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-water-ladder"></i>
+                    <h3>River Rides</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio mollitia voluptatem minima magni aspernatur, accusamus modi excepturi eius, tenetur culpa vero. At maxime laborum earum iste beatae laboriosam minus sed.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div>
+            <div class="logo">
+                <img src="https://themewagon.github.io/WaterLand/index.html" alt="">
+                <h3>WaterLand</h3>
+            </div>
+            <ul class="foot">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos asperiores sapiente, explicabo deleniti eligendi doloribus dolorem, fugit adipisci rem distinctio quos vero delectus obcaecati? Aliquam consectetur numquam harum mollitia distinctio.</p>
+                <p><i class="fa-solid fa-location-dot"></i>123 Street New York.USA</p>
+                <p><i class="fa-solid fa-envelope"></i>info@example.com</p>
+                <p><i class="fa-solid fa-phone"></i>(+012) 3456 7890</p>
+            </ul>
+        </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul class="foot">
+                    <p>About US</p>
+                    <p>Feature</p>
+                    <p>Attraction</p>
+                    <p>Tickets</p>
+                    <p>Blog</p>
+                    <p>Contact Us</p>
+                </ul>
+            </div>
+            <div>
+                <h3>support</h3>
+                <ul class="foot">
+                    <p>Privacy Policy</p>
+                    <p>T&C</p>
+                    <p>Disclaimner</p>
+                    <p>Support</p>
+                    <p>FAQ</p>
+                    <p>Help</p>
+                </ul>
+            </div>
+            <div>
+                <h3>Opening Hours</h3>
+                    <h4>Monday-Friday</h4>   <p>11:00 AM-16:00 PM</p>
+                    <h4>Saturday-Sunday</h4> <p>09:00 AM-17:00 PM</p>
+                    <h4>Holiday</h4> <p>09:00 AM-17:00 PM</p>
+                </ul>
+            </div>
+    </div>
+    </footer>
+
+<script src="https://kit.fontawesome.com/e77df793c7.js" crossorigin="anonymous"></script>
 </html>
