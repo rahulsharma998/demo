@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect on Box</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            display: flex;
+            gap: 10px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #61dafb;
+            border: 3px solid #61dafb;
+            border-radius: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        /* Targeting the third box */
+        .container .box:nth-child(3):hover {
+            transform: scale(2);
+            background-color: #ff6347; /* Tomato color */
+            border-color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
