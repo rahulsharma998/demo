@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Lists</title>
+    <style>
+
+        #list1 li {
+            font-family: Arial, sans-serif;
+            color: black; 
+        }
+
+        #list1 li:nth-child(odd) {
+            color: red; 
+        }
+
+        #list1 li:nth-child(even) {
+            color: black; 
+        }
+
+        ul:not(#list1) {
+            list-style-type: none;
+            padding-left: 20px; 
+        }
+
+        ul:not(#list1) li {
+            position: relative; 
+            padding-left: 20px; 
+            font-family: Arial, sans-serif;
+            color: black; 
+        }
+
+        ul:not(#list1) li::before {
+            content: "•"; 
+            position: absolute;
+            left: 0; 
+            color: pink; 
+            font-size: 20px; 
+            line-height: 1; 
+        }
+    </style>
+</head>
+<body>
+    <ul id="list1">
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+        <li>item-5</li>
+        <li>item-6</li>
+        <li>item-7</li>
+        <li>item-8</li>
+        <li>item-9</li>
+        <li>item-10</li>
+    </ul>
+    <ul>
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+        <li>item-5</li>
+        <li>item-6</li>
+        <li>item-7</li>
+        <li>item-8</li>
+        <li>item-9</li>
+        <li>item-10</li>
+    </ul>
+</body>
+</html>
