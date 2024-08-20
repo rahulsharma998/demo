@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Cards with Hover Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: burlywood;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            width: 150px;
+            height: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            color: white;
+            transition: opacity 0.5s ease, z-index 0.5s ease;
+            position: relative;
+        }
+
+        .card-container .card {
+            opacity: 1;
+        }
+
+        .card-container .card:hover {
+            z-index: 1;
+            opacity: 1;
+        }
+
+        .card-container .card:hover ~ .card,
+        .card-container .card:not(:hover) {
+            opacity: 0.5;
+        }
+
+        .card:nth-child(1) { background-color: red; }
+        .card:nth-child(2) { background-color: greenyellow; }
+        .card:nth-child(3) { background-color: blue; }
+        .card:nth-child(4) { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+    </div>
+</body>
+</html>
