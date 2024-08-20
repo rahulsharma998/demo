@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulated Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            color: #61dafb;
+            font-family: 'Arial', sans-serif;
+        }
+        .clock {
+            font-size: 100px;
+            letter-spacing: 10px;
+            border: 3px solid #61dafb;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #20232a;
+            position: relative;
+            overflow: hidden;
+            width: 480px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #61dafb;
+        }
+        .clock span {
+            position: relative;
+            font-family: 'Digital-7', sans-serif;
+            display: inline-block;
+            animation: updateClock 60s steps(60) infinite;
+        }
+        @keyframes updateClock {
+            0% { content: '00:00:00'; }
+            1.67% { content: '00:00:01'; }
+            3.33% { content: '00:00:02'; }
+            5% { content: '00:00:03'; }
+            6.67% { content: '00:00:04'; }
+            8.33% { content: '00:00:05'; }
+            10% { content: '00:00:06'; }
+            11.67% { content: '00:00:07'; }
+            13.33% { content: '00:00:08'; }
+            15% { content: '00:00:09'; }
+            16.67% { content: '00:00:10'; }
+            18.33% { content: '00:00:11'; }
+            20% { content: '00:00:12'; }
+            21.67% { content: '00:00:13'; }
+            23.33% { content: '00:00:14'; }
+            25% { content: '00:00:15'; }
+            26.67% { content: '00:00:16'; }
+            28.33% { content: '00:00:17'; }
+            30% { content: '00:00:18'; }
+            31.67% { content: '00:00:19'; }
+            33.33% { content: '00:00:20'; }
+            35% { content: '00:00:21'; }
+            36.67% { content: '00:00:22'; }
+            38.33% { content: '00:00:23'; }
+            40% { content: '00:00:24'; }
+            41.67% { content: '00:00:25'; }
+            43.33% { content: '00:00:26'; }
+            45% { content: '00:00:27'; }
+            46.67% { content: '00:00:28'; }
+            48.33% { content: '00:00:29'; }
+            50% { content: '00:00:30'; }
+            51.67% { content: '00:00:31'; }
+            53.33% { content: '00:00:32'; }
+            55% { content: '00:00:33'; }
+            56.67% { content: '00:00:34'; }
+            58.33% { content: '00:00:35'; }
+            60% { content: '00:00:36'; }
+            61.67% { content: '00:00:37'; }
+            63.33% { content: '00:00:38'; }
+            65% { content: '00:00:39'; }
+            66.67% { content: '00:00:40'; }
+            68.33% { content: '00:00:41'; }
+            70% { content: '00:00:42'; }
+            71.67% { content: '00:00:43'; }
+            73.33% { content: '00:00:44'; }
+            75% { content: '00:00:45'; }
+            76.67% { content: '00:00:46'; }
+            78.33% { content: '00:00:47'; }
+            80% { content: '00:00:48'; }
+            81.67% { content: '00:00:49'; }
+            83.33% { content: '00:00:50'; }
+            85% { content: '00:00:51'; }
+            86.67% { content: '00:00:52'; }
+            88.33% { content: '00:00:53'; }
+            90% { content: '00:00:54'; }
+            91.67% { content: '00:00:55'; }
+            93.33% { content: '00:00:56'; }
+            95% { content: '00:00:57'; }
+            96.67% { content: '00:00:58'; }
+            98.33% { content: '00:00:59'; }
+            100% { content: '00:01:00'; }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock" tabindex="0">
+        <span class="time">00:00:00</span>
+    </div>
+</body>
+</html>
