@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: gray;
+            color: white;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        /* Apply italic and larger font size to rows starting from the first and every 4 rows */
+        tr:nth-of-type(4n+1) td {
+            font-style: italic;
+            font-size: 30px;
+        }
+
+        /* Apply green color to rows that are multiples of 3 (excluding header) */
+        tr:nth-of-type(3n+1):not(:first-of-type) td {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* Last row styling */
+        tr:last-of-type {
+            background-color: yellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Product 1</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 2</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 3</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 4</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 5</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 6</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 7</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 8</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 9</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Product 10</td>
+            <td>20</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td colspan="2">Total Price</td>
+            <td>$200</td>
+        </tr>
+    </table>
+</body>
+</html>

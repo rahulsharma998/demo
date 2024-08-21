@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <style>
+    body {
+        background-color: black;
+        color: aliceblue;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        display: flex;
+        gap: 0; 
+        width: 100%;
+         max-width: 1200px; 
+    }
+    .pricing-section {
+        flex: 1;
+        padding: 20px;
+    }
+    .pricing-box {
+        border: 1px solid gray;
+        padding: 20px;
+        border-radius: 8px;
+        position: relative;
+        min-width: 300px; 
+        flex: 2; 
+    }
+    .pricing-box h1 {
+        color: white;
+        font-weight: bold;
+    }
+    .pricing-box p {
+        color: gray;
+    }
+    .button {
+        background-color: #4e0589; 
+        color: white;
+        border: none;
+        padding: 10px 0; 
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        margin-top: 10px;
+        width: 100%; 
+    }
+    .button:hover {
+        background-color: #4d2560; 
+    }
+    .list-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 0; 
+        padding: 0;
+        margin: 0;
+    }
+    .list-column {
+        padding: 0;
+        margin: 0;
+    }
+    .list-container ul {
+        list-style: none; 
+        padding: 0;
+        margin: 0;
+    }
+    .list-container li {
+        padding: 10px 0;
+    }
+    .list-container a {
+        text-decoration: none; 
+        color: white;
+        display: block;
+        position: relative;
+        padding-left: 25px;
+    }
+    .list-container a::before {
+        content: '✔'; 
+        position: absolute;
+        left: 0;
+        color: blue;
+    }
+    .pricing-info {
+        border: 1px solid gray;
+        padding: 20px;
+        border-radius: 8px;
+        width: 180px;
+        margin-top: 180px;
+        flex: 1; 
+    }
+    .pricing-info h2 {
+        color: white;
+        font-weight: bold;
+        margin-top: 0;
+    }
+    .pricing-info p {
+        color: gray; 
+    }
+    .pricing-info .line {
+        border-bottom: 1px solid gray;
+        margin: 10px 0;
+        padding-bottom: 10px;
+    }
+    .pricing-info ul {
+        list-style: none; 
+        padding: 0;
+        margin: 0;
+    }
+    .pricing-info li {
+        color: gray; 
+        padding: 10px 0;
+    }
+    .price-details {
+        display: flex;
+        align-items: baseline;
+    }
+    .price-details h1 {
+        margin: 0;
+        font-size: 2em;
+        color: white;
+        font-weight: bold;
+    }
+    .price-details p {
+        margin: 0;
+        color: gray;
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="pricing-section">
+            <nav class="navbar">
+                <h3 style="color: #5a2e7e;">Pricing</h3> 
+                <h1>One Price for Everything</h1>
+                <p>The simplest pricing in the industry. You won't need a calculator for this.</p>
+            </nav>
+            <div class="pricing-box">
+                <div class="price-details">
+                    <h1>$20</h1>
+                    <p>/Site / Month</p>
+                </div>
+                <p>Include everything you need for your professional website</p>
+                <div class="list-container">
+                    <div class="list-column">
+                        <ul>
+                            <li><a href="#">Custom Domains</a></li>
+                            <li><a href="#">GDPR Solution</a></li>
+                            <li><a href="#">Beautiful Site Design</a></li>
+                            <li><a href="#">Super-Fast Hosting</a></li>
+                            <li><a href="#">Analytics</a></li>
+                            <li><a href="#">Custom Forms</a></li>
+                            <li><a href="#">Blogging</a></li>
+                        </ul>
+                    </div>
+                    <div class="list-column">
+                        <ul>
+                            <li><a href="#">Password Protection</a></li>
+                            <li><a href="#">Multilingual Site</a></li>
+                            <li><a href="#">User Management</a></li>
+                            <li><a href="#">Unlimited Pages</a></li>
+                            <li><a href="#">Unlimited Team Members</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button class="button">Get Started →</button>
+            </div>
+        </div>
+        <div class="pricing-info">
+            <h2>Basic</h2>
+            <p>Publish your site for free with almost all pro features.</p>
+            <div class="line"></div>
+            <h2>Free</h2>
+            <p>Everything from Pro, except:</p>
+            <ul>
+                <li>- No custom domains</li>
+                <li>- "Made with umso" Branding</li>
+                <li>No credit card required</li>
+            </ul>
+    </div>
+</body>
+</html>
