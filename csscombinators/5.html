@@ -18,24 +18,21 @@
 
         th {
             background-color: gray;
-            color: white;
             font-weight: bold;
             font-style: italic;
+            font-size: 30px;
         }
-
-        /* Apply italic and larger font size to rows starting from the first and every 4 rows */
-        tr:nth-of-type(4n+1) td {
+        tr:nth-of-type(4n+2) td {
             font-style: italic;
             font-size: 30px;
         }
 
-        /* Apply green color to rows that are multiples of 3 (excluding header) */
         tr:nth-of-type(3n+1):not(:first-of-type) td {
             color: green;
             font-weight: bold;
         }
 
-        /* Last row styling */
+
         tr:last-of-type {
             background-color: yellow;
             font-weight: bold;
@@ -100,7 +97,7 @@
             <td>$20</td>
         </tr>
         <tr>
-            <td colspan="2">Total Price</td>
+            <td colspan="2">Sum</td>
             <td>$200</td>
         </tr>
     </table>
