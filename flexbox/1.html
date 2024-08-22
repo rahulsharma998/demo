@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinSwitch</title>
+    <style>
+        :root {
+            --bg-color-light: #ffffff;
+            --text-color-light: #000000;
+            --button-bg-light: #90ee90;
+            --button-text-light: #ffffff;
+            --bg-color-dark: #121212;
+            --text-color-dark: #ffffff;
+            --button-bg-dark: #76c7c0;
+            --button-text-dark: #ffffff;
+        }
+
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            color: var(--text-color-light);
+            background-color: var(--bg-color-light);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: var(--bg-color-light);
+            transition: background-color 0.3s;
+            margin-top: 0; /* Reduced top margin */
+            margin-bottom: 20px; /* Added bottom margin */
+        }
+
+        #logo {
+            width: 150px;
+        }
+
+        nav div p {
+            display: inline-block;
+            margin: 0 10px;
+            position: relative; /* To position the chevron icon */
+        }
+
+        nav div p:hover {
+            cursor: pointer;
+            color: #007bff;
+        }
+
+        nav div p::after {
+            content: "";
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .fa-chevron-down {
+            font-size: 0.8em; /* Adjusted size */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: rgb(100, 238, 116);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--button-bg-dark);
+        }
+
+        .theme-toggle {
+            cursor: pointer;
+            padding: 5px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: #ccc;
+        }
+
+        #main1 {
+            width: 40vw;
+            height: auto;
+        }
+
+        #main2 {
+            color: rgb(70, 66, 66);
+            margin-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: auto;
+            width: 45%;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        #main2 h2, #main2 h3 {
+            margin: 0;
+        }
+
+        .div2 {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        #div1 {
+            margin: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .cont {
+            margin: 20px;
+            width: 20%;
+        }
+
+        img {
+            height: 140px;
+            width: auto;
+        }
+
+        .cont-p {
+            margin: 20px;
+            width: 60%;
+        }
+
+        h1 {
+            margin-left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .theme-toggle {
+                margin-top: 10px;
+            }
+
+            #main1 {
+                width: 100%;
+            }
+
+            .cont {
+                width: 100%;
+            }
+        }
+
+        body[data-theme='dark'] {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        nav[data-theme='dark'] {
+            background-color: var(--bg-color-dark);
+        }
+
+        button[data-theme='dark'] {
+            background-color: var(--button-bg-dark);
+            color: var(--button-text-dark);
+        }
+
+        .theme-toggle[data-theme='dark'] {
+            background-color: #444;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <img id="logo" src="https://coinswitch.co/_next/static/media/logo.01525825.svg" alt="Logo">
+        </div>
+        <div>
+            <p>Products <i class="fa-solid fa-chevron-down"></i></p>
+            <p>Coins</p>
+            <p>Ventures</p>
+            <p>Blog</p>
+            <p>Company <i class="fa-solid fa-chevron-down"></i></p>
+        </div>
+        <button>Login To Pro</button>
+        <button class="theme-toggle" onclick="document.body.toggleAttribute('data-theme', 'dark')">🌙</button>
+    </nav>
+    <main class="div2">
+        <div>
+            <img id="main1" src="https://s3.ap-southeast-1.amazonaws.com/files.coinswitch.co/images/blockchain.webp" alt="">
+        </div>
+        <div id="main2">
+            <h2>We believe that Web3 and blockchain are the foundations of the new digital, decentralized economy.</h2>
+            <h3>To this end, we’re partnering with startups that are advancing the future of Blockchain technology. We provide early stage founders with the capital, network connections and most importantly, the advice they need to transform the Web3 landscape in India.</h3>
+        </div>
+    </main>
+    <h1>Why it Matters?</h1>
+    <div id="div1">
+        <div class="cont">
+            <img src="https://s3.ap-southeast-1.amazonaws.com/files.coinswitch.co/images/partnership.svg" alt="">
+            <p class="cont-p">Partnership with India's largest wealth tech destination</p>
+        </div>
+        <div class="cont">
+            <img src="https://s3.ap-southeast-1.amazonaws.com/files.coinswitch.co/images/network.svg" alt="">
+            <p class="cont-p">Access to a network of 70+ global venture capital partners</p>
+        </div>
+        <div class="cont">
+            <img src="https://s3.ap-southeast-1.amazonaws.com/files.coinswitch.co/images/capital.svg" alt="">
+            <p class="cont-p">Capital infusion up to $250,000</p>
+        </div>
+        <div class="cont">
+            <img src="https://s3.ap-southeast-1.amazonaws.com/files.coinswitch.co/images/mentorship.svg" alt="">
+            <p class="cont-p">Mentorship from in-house experts</p>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/e77df793c7.js" crossorigin="anonymous"></script>
+</body>
+</html>
