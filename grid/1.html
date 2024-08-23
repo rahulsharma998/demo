@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaQ</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .box {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .box img {
+            width: 40%;
+            height: auto;
+            object-fit: cover;
+        }
+        .text {
+            padding: 20px;
+            width: 60%;
+        }
+        .text h2 {
+            margin-top: 0;
+        }
+        .text p {
+            margin: 10px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .box {
+                flex-direction: column;
+            }
+            .box img {
+                width: 100%;
+                height: auto;
+            }
+            .text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="https://thumbor.forbes.com/thumbor/fit-in/960x/https://specials-images.forbesimg.com/imageserve/5e6280e6e1e617000759074f/1920x0.jpg?fit=scale" alt="Czinger 21C Hybrid">
+            <div class="text">
+                <h2>Czinger 21C Hybrid</h2>
+                <p>Kevin Czinger caused quite a stir when he unveiled the 720-horsepower, 1,400-pound Divergent Blade in 2015. It wasn’t the ultra-sleek hypercar that was so revolutionary, but rather the way it was built—using 3D-printed aluminum and carbon-fiber parts that snap together like a puzzle.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://thumbor.forbes.com/thumbor/fit-in/960x/https://specials-images.forbesimg.com/imageserve/5e62a1297d6f2600068edf37/1920x0.jpg?fit=scale" alt="McLaren 765LT">
+            <div class="text">
+                <h2>McLaren 765LT</h2>
+                <p>For the well-heeled supercar enthusiast who’s not quite ready to abandon a gas engine, there is the McLaren 765LT. The car’s 4.0-liter twin-turbo V8 delivers 754 horsepower and McLaren claims it will sprint from 0 to 124 mph in 7.2 seconds, a second faster than the 720S. The top speed, however, is down from the 720s’s 211 mph to a leisurely 205 mph due to gearing changes.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="https://thumbor.forbes.com/thumbor/fit-in/960x/https://specials-images.forbesimg.com/imageserve/5e62842944b78400068c2d80/1920x0.jpg?cropX1=92&cropX2=3385&cropY1=118&cropY2=1340" alt="BMW i4 Concept">
+            <div class="text">
+                <h2>BMW i4 Concept</h2>
+                <p>The i4’s projected range is estimated at 270 miles, and the 80kWh battery pack supplies enough juice to the single 530-horsepower electric motor to produce a claimed 0 to 60 mph run of 4 seconds. Recharging to 80 percent capacity with the onboard 150-kW fast-charger should take about 35 minutes.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
