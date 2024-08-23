@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: aliceblue;
+        }
+        .container {
+            width: 350px; 
+            height: 550px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+            background-color: white;
+            padding: 15px; 
+        }
+        .display {
+            background-color: white;
+            color: black;
+            font-size: 2em;
+            text-align: right;
+            border-radius: 10px;
+            padding: 25px; 
+            box-sizing: border-box;
+            height: 100px; 
+            border-bottom: 2px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+            margin-bottom: 15px; 
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 10px; 
+        }
+        button {
+            font-size: 1.5em;
+            width: 70px; 
+            height: 70px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background-color: #e0e0e0;
+        }
+        .symbol {
+            background-color: black;
+            color: white;
+        }
+        .symbol:hover {
+            background-color: #333;
+        }
+        .C {
+            background-color: red;
+            color: white;
+        }
+        .C:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="display">0</div>
+        <div class="buttons">
+            <button class="no">1</button>
+            <button class="no">2</button>
+            <button class="no">3</button>
+            <button class="symbol">+</button>
+            <button class="no">4</button>
+            <button class="no">5</button>
+            <button class="no">6</button>
+            <button class="symbol">-</button>
+            <button class="no">7</button>
+            <button class="no">8</button>
+            <button class="no">9</button>
+            <button class="symbol">x</button>
+            <button class="C">C</button>
+            <button class="no">0</button>
+            <button class="symbol">/</button>
+            <button class="symbol">=</button>
+        </div>
+    </div>
+</body>
+</html>
