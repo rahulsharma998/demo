@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input {
+            margin-top: 5px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .chart {
+            margin-top: 30px;
+        }
+
+        .chart h2 {
+            text-align: center;
+        }
+
+        .bar {
+            height: 30px;
+            margin: 5px 0;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Product Data Input</h1>
+        <form id="productForm">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" required>
+            <label for="price">Price:</label>
+            <input type="number" id="price" required>
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" step="0.1" min="0" max="5" required>
+            <button type="submit">Add Product</button>
+        </form>
+        <div id="priceChart" class="chart">
+            <h2>Price Chart</h2>
+            <div id="priceBars"></div>
+        </div>
+        <div id="ratingChart" class="chart">
+            <h2>Rating Chart</h2>
+            <div id="ratingBars"></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productForm = document.getElementById('productForm');
+            const priceBars = document.getElementById('priceBars');
+            const ratingBars = document.getElementById('ratingBars');
+            
+            const products = [];
+
+            function renderCharts() {
+                priceBars.innerHTML = '';
+                ratingBars.innerHTML = '';
+
+                if (products.length === 0) return;
+
+                const maxPrice = Math.max(...products.map(p => p.price));
+                const maxRating = Math.max(...products.map(p => p.rating));
+
+                products.forEach(product => {
+                    const priceBar = document.createElement('div');
+                    priceBar.className = 'bar';
+                    priceBar.style.width = `${(product.price / maxPrice) * 100}%`;
+                    priceBar.style.backgroundColor = 'teal';
+                    priceBar.textContent = `${product.name} ($${product.price})`;
+                    priceBars.appendChild(priceBar);
+
+                    const ratingBar = document.createElement('div');
+                    ratingBar.className = 'bar';
+                    ratingBar.style.width = `${(product.rating / maxRating) * 100}%`;
+                    ratingBar.style.backgroundColor = 'orange';
+                    ratingBar.textContent = `${product.name} (${product.rating})`;
+                    ratingBars.appendChild(ratingBar);
+                });
+            }
+
+            productForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const price = parseFloat(document.getElementById('price').value);
+                const rating = parseFloat(document.getElementById('rating').value);
+
+                if (!name || isNaN(price) || isNaN(rating)) return;
+
+                products.push({ name, price, rating });
+                renderCharts();
+
+                productForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

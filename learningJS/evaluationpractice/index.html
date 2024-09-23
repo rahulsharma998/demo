@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Google Sheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #e0eafc, #cfdef3); /* Soft gradient background */
+            color: #333; /* Dark text color for better readability */
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center; /* Align items center vertically */
+        }
+
+        button {
+            background: linear-gradient(145deg, #007bff, #0056b3); /* Gradient background */
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        }
+
+        button:hover {
+            background: linear-gradient(145deg, #0056b3, #003d79); /* Darker gradient on hover */
+            transform: scale(1.05);
+        }
+
+        button:active {
+            background: linear-gradient(145deg, #003d79, #002a55); /* Even darker gradient on click */
+            transform: scale(1);
+        }
+
+        input[type="text"] {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            padding: 10px;
+            width: 250px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.3);
+            outline: none;
+        }
+
+        #tableContainer {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+            overflow-x: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd; /* Light gray border */
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(145deg, #343a40, #23272b); /* Dark gradient background for header */
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa; /* Light gray for even rows */
+        }
+
+        tr:hover {
+            background-color: #e2e6ea; /* Slightly darker gray for hover effect */
+        }
+
+        .deletebutton {
+            background: linear-gradient(145deg, #dc3545, #c82333); /* Red gradient for delete button */
+            color: #ffffff;
+        }
+
+        .deletebutton:hover {
+            background: linear-gradient(145deg, #c82333, #a71d2a); /* Darker red on hover */
+        }
+
+        .freezecol {
+            position: sticky;
+            left: 0;
+            background-color: #f1f3f5; /* Light gray for sticky columns */
+            z-index: 1;
+        }
+
+        .freezerow {
+            position: sticky;
+            top: 0;
+            background-color: #f1f3f5; /* Light gray for sticky rows */
+            z-index: 2;
+        }
+
+        .loading-indicator {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-message, .error-message {
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch; /* Stretch controls to full width */
+            }
+
+            button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            input[type="text"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button id="addRow">Add Row</button>
+        <button id="addcolumn">Add Column</button>
+        <input type="text" id="filterinput" placeholder="Filter...">
+        <button id="applyfilter">Apply Filter</button>
+        <button id="Clearfilter">Clear Filter</button>
+    </div>
+    <div id="tableContainer"></div>
+
+    <div id="loading" class="loading-indicator">Loading...</div>
+
+    <script src="index.js"></script>
+</body>
+</html>
