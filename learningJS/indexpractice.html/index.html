@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Management System</h1>
+
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Enter task" />
+            <textarea id="taskDescriptionInput" placeholder="Enter task description"></textarea>
+            <input type="text" id="assignedUserInput" placeholder="Assigned to" />
+            <label for="dueDateInput">Due Date and Time:</label>
+            <input type="datetime-local" id="dueDateInput" />
+            <select id="priorityInput">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="search-sort-filter">
+            <input type="text" id="searchInput" placeholder="Search tasks" oninput="searchTasks()" />
+            <select id="sortCriteria">
+                <option value="priority">Sort by Priority</option>
+                <option value="dueDate">Sort by Due Date</option>
+                <option value="alphabetical">Sort Alphabetically</option>
+                <option value="creationDate">Sort by Creation Date</option>
+            </select>
+            <button onclick="sortTasks()">Sort Tasks</button>
+            <select id="filterCriteria">
+                <option value="all">All Tasks</option>
+                <option value="completed">Completed Tasks</option>
+                <option value="incomplete">Incomplete Tasks</option>
+            </select>
+            <button onclick="filterTasks()">Filter Tasks</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+    <div>
+        <select id="view-select">
+            <option value="list">List View</option>
+            <option value="kanban">Kanban View</option>
+            <option value="calendar">Calendar View</option>
+            <option value="graph">Graph View</option>
+        </select>
+    </div>
+    
+    <div id="list-view" class="view-container" style="display: block;">
+        <ul id="task-list">
+        </ul>
+    </div>
+    
+    <div id="kanban-view" class="view-container" style="display: none;">
+        <div class="kanban-column">
+            <h3>To Do</h3>
+            <ul id="todo-column" class="kanban-column-list"></ul>
+        </div>
+        <div class="kanban-column">
+            <h3>In Progress</h3>
+            <ul id="inprogress-column" class="kanban-column-list"></ul>
+        </div>
+        <div class="kanban-column">
+            <h3>Done</h3>
+            <ul id="done-column" class="kanban-column-list"></ul>
+        </div>
+    </div>
+    
+    <div id="calendar-view" class="view-container" style="display: none;">
+        <div id="calendar"></div>
+    </div>
+
+    <div id="graph-view" class="view-container" style="display: none;">
+        <canvas id="task-progress-chart"></canvas>
+    </div>
+       
+
+    <script src="index.js"></script>
+</body>
+</html>

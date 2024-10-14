@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    <link rel="stylesheet" href="index2.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <button class="home-btn">Home</button>
+        </div>
+        <div class="navbar-center">
+            <input type="text" id="searchInput" placeholder="Search tasks" oninput="searchTasks()">
+        </div>
+        <div class="navbar-right">
+            <button id="notificationBtn">🔔</button>
+            <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+    
+    <div class="sidebar">
+        <ul>
+            <li>
+                <label for="viewSelector">Select View:</label>
+                <select id="viewSelector" onchange="switchView()">
+                    <option value="list">List View</option>
+                    <option value="kanban">Kanban View</option>
+                    <option value="graph">Graph View</option>
+                    <option value="calendar">Calendar View</option>
+                </select>
+            </li>
+            <li>
+                <button onclick="openCreateTaskDialog()">Create Task</button>
+            </li>
+            <li>
+                <label for="sortCriteria">Sort By:</label>
+                <select id="sortCriteria" onchange="sortTasks()">
+                    <option value="priority">Priority</option>
+                    <option value="dueDate">Due Date</option>
+                    <option value="alphabetical">Alphabetical</option>
+                    <option value="creationDate">Creation Date</option>
+                </select>
+            </li>
+            <li>
+                <label for="filterCriteria">Filter:</label>
+                <select id="filterCriteria" onchange="filterTasks()">
+                    <option value="all">All Tasks</option>
+                    <option value="completed">Completed</option>
+                    <option value="incomplete">Incomplete</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Task Management Container -->
+    <div class="container">
+        <!-- Task List Section -->
+        <ul id="taskList"></ul>
+    </div>
+
+    <!-- Create Task Modal Dialog -->
+    <div id="createTaskDialog" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCreateTaskDialog()">&times;</span>
+            <h2>Create New Task</h2>
+            <input type="text" id="taskInputModal" placeholder="Enter task title" required />
+            <textarea id="taskDescriptionInputModal" placeholder="Enter task description"></textarea>
+            <input type="text" id="assignedUserInputModal" placeholder="Assigned to" />
+            <label for="dueDateInputModal">Due Date and Time:</label>
+            <input type="datetime-local" id="dueDateInputModal" required />
+            <select id="priorityInputModal">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+            <button onclick="addTaskFromModal()">Add Task</button>
+        </div>
+    </div>
+
+    <script src="index2.js"></script>
+</body>
+</html>

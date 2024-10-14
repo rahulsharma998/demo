@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background: linear-gradient(45deg, #ffafbd, #ffc3a0);
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s forwards; /* Fade-in effect */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.heading h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideIn 0.5s ease forwards; /* Slide-in effect */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px); /* Slide from above */
+        opacity: 0; /* Start hidden */
+    }
+    to {
+        transform: translateY(0); /* End position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #999;
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+    color: #333;
+    transition: border-bottom 0.3s ease, transform 0.3s ease;
+}
+
+.input-group input:focus {
+    border-bottom: 2px solid #ffafbd;
+    transform: scale(1.02); /* Slightly enlarge on focus */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    margin-top: 25px;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    animation: popIn 0.5s forwards; /* Pop-in effect */
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8); /* Start smaller */
+        opacity: 0; /* Start hidden */
+    }
+    to {
+        transform: scale(1); /* End size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ffc3a0, #ffafbd);
+    box-shadow: 0 5px 15px rgba(255, 175, 189, 0.5);
+    transform: translateY(-3px) scale(1.05); /* Slightly raise and enlarge */
+}
+
+.forget {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.forget a {
+    text-decoration: none;
+    font-size: 12px;
+    text-decoration: underline;
+    color: #ffafbd;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.forget a:hover {
+    color: #333;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.signedIn {
+    text-align: center;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.signedIn a {
+    color: #ffafbd;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease, transform 0.3s ease;
+}
+
+.signedIn a:hover {
+    text-decoration: underline;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.form__group {
+    position: relative;
+    width: 100%;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    color: #333;
+    background: transparent;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    cursor: text;
+    top: 20px;
+    font-size: 16px;
+}
+
+.form__label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: #999;
+    transition: 0.2s ease all;
+    font-size: 16px;
+    pointer-events: none;
+}
