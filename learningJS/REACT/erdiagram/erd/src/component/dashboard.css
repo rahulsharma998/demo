@@ -1,0 +1,50 @@
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard h2 {
+  font-size: 24px;
+}
+
+.dashboard-button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.filters label {
+  margin-right: 10px;
+}
+
+.diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.diagram-card {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.diagram-card h3 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.diagram-card p {
+  margin: 5px 0;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+}
